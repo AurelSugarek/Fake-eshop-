@@ -110,36 +110,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_product'])) {
         /* Product List */
         .products {
             padding: 5% 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            text-align: center;
+        }
+
+        .product-img {
+            width: 600px;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 600px;
         }
         .product-card {
             display: flex;
-            flex-direction: column;
             align-items: center;
             margin-bottom: 2rem;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             transition: transform 0.3s, box-shadow 0.3s;
-            background: white;
         }
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
-        .product-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 12px 12px 0 0;
-        }
         .product-card .info {
             padding: 1.5rem;
-            text-align: center;
-            width: 100%;
+            text-align: left;
+            width: 50%;
         }
         .product-card .info h3 {
             font-family: 'Playfair Display', serif;
@@ -149,7 +150,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_product'])) {
         .product-card .info p {
             color: #777;
             margin-bottom: 1rem;
-            font-size: 0.9rem;
         }
         .product-card .info span {
             font-weight: 700;
@@ -157,15 +157,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_product'])) {
         }
         .product-card .info button {
             margin-top: 1rem;
-            padding: 0.8rem 1.5rem;
+            padding: 0.5rem 1rem;
             background: #bfa06b;
             color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.3s;
-            font-size: 1rem;
-            width: 100%;
         }
         .product-card .info button:hover {
             background: #a7894f;
@@ -315,49 +313,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_product'])) {
             height: 100%;
             border: none;
         }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem 5%;
-            }
-            
-            nav a {
-                margin: 0 0.5rem;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .products {
-                padding: 5% 5%;
-                grid-template-columns: 1fr;
-            }
-            
-            .product-card .info {
-                padding: 1rem;
-            }
-            
-            .product-card .info h3 {
-                font-size: 1.2rem;
-            }
-            
-            .product-card .info p {
-                font-size: 0.8rem;
-            }
-            
-            .product-card .info button {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -463,7 +418,7 @@ if (isset($_GET['view_cart'])) {
             }
         }
         
-        echo '<div class="total-price">Total: ' . number_format($total_price) . '</div>';
+        echo '<div class="total-price">Total: $' . number_format($total_price) . '</div>';
         echo '<form action="checkout.php" method="post">';
         echo '<button type="submit" class="checkout-btn">Continue to Checkout</button>';
         echo '</form>';
