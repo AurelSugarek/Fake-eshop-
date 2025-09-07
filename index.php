@@ -347,7 +347,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_product'])) {
         ["name" => "Phthalo Blue", "price" => 1000, "description" => "Intense blue used in the 20th century.", "image" => "/img/p.png", "emoji" => "🔵"],
         ["name" => "Cadmium Red", "price" => 200, "description" => "Bright, toxic pigments.", "image" => "/img/c.jpg", "emoji" => "🟥"],
         ["name" => "Cochineal Red", "price" => 800, "description" => "Obtained from cochineal insects.", "image" => "/img/co.png", "emoji" => "🟥"],
-        ["name" => "Indian Yellow", "price" => 300, "description" => "Obtained from dried cow urine.", "image" => "/img/i.png", "emoji" => "🟨"],
+        ["name" => "Indian Yellow", "price" => 300, "description" => "Obtained from dried cow urine.", "image" => "/img/i.jpg", "emoji" => "🟨"],
         ["name" => "Cobalt Blue", "price" => 400, "description" => "Intense blue pigment.", "image" => "/img/b.jpg", "emoji" => "🔵"],
         ["name" => "Emerald Green", "price" => 150, "description" => "Contains arsenic, extremely toxic.", "image" => "/img/z.jpg", "emoji" => "🟩"]
     ];
