@@ -117,12 +117,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_product'])) {
             text-align: center;
         }
 
-        .product-img {
-            width: 600px;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 600px;
-        }
+.product-img {
+    width: 100%;
+    max-width: 600px;   /* na veľkom PC max 600px */
+    aspect-ratio: 1/1; /* štvorcový tvar */
+    object-fit: cover; /* pekne oreže obrázok do štvorca */
+    border-radius: 50%; /* spraví z neho kruh */
+}
+
         .product-card {
             display: flex;
             align-items: center;
